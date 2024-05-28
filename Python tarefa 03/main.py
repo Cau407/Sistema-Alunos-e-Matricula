@@ -11,24 +11,23 @@ Escolha entre as seguintes alternativas:
     
     match menu:
         case "1":
-            nome = input("Digite o nome do aluno: ")
-            matricula = input("Digite a matrícula do aluno: ")
-            alunos[nome] = matricula
+            nome = input("Digite o nome do(a) aluno(a): ")
+            matricula = input("Digite a matrícula do(a) aluno(a): ")
+            alunos[matricula] = nome
         case "2":
-            aluno_delete = input("Digite o nome do aluno que deseja deletar: ")
+            aluno_delete = input("Digite o número de matrícula do(a) aluno(a) que deseja deletar: ")
             if aluno_delete in alunos:
-                alunos.pop(aluno_delete)
-                print(f"Aluno {aluno_delete} removido com sucesso")
+                print(f"Aluno(a) {alunos[aluno_delete]} removido com sucesso")
+                alunos.pop(aluno_delete)               
             else:
-                print("Aluno não encontrado")
+                print("Aluno(a) não encontrado")
         case "3":
             if alunos:
-                for nomeAluno, matriculaAluno in alunos.items():
+                for matriculaAluno, nomeAluno in alunos.items():
                     print(f"""
-Aluno: {nomeAluno} 
+Aluno(a): {nomeAluno} 
 Número de matrícula: {matriculaAluno}
-
-///""")
+""")
             else:
                 print("Nenhum aluno cadastrado")
         case "0":
